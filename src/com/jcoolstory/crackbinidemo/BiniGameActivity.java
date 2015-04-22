@@ -55,10 +55,8 @@ public class BiniGameActivity extends Activity {
 		mCrackbview = new CrackBView(this,this);
 		sv.addView(mCrackbview);
 		
-		//adView = new AdView(this, AdSize.BANNER, MY_AD_UNIT_ID);
 		LinearLayout layout = (LinearLayout)findViewById(R.id.banner);
-	//	Log.d("TAG", (adView == null ? "true" : "fals") + "|" + (layout == null ? "true" : "false"));
-		
+			
 		adView = new AdView(BiniGameActivity.this, AdSize.BANNER, MY_AD_UNIT_ID);
 		layout.addView(adView);
 
@@ -67,8 +65,6 @@ public class BiniGameActivity extends Activity {
 			@Override
 			public void run() {
 				// TODO Auto-generated method stub
-//				ImageView image = (ImageView) findViewById(R.id.game_imageview);
-//				image.setVisibility(View.GONE);
 				 adView.loadAd(new AdRequest());
 				
 			}
@@ -84,12 +80,6 @@ public class BiniGameActivity extends Activity {
 				@Override
 				public void run() {
 					// TODO Auto-generated method stub
-//					if (adView !=null)
-//					{
-////						adView.setVisibility(View.VISIBLE);
-////						
-////					    adView.loadAd(new AdRequest());
-//					}
 				}
 			}, 5000);
 	}
@@ -97,10 +87,8 @@ public class BiniGameActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// TODO Auto-generated method stub
 		menu.add(0, 1, 0, "Restart");
-	//	menu.add(0,2,0,"Background");
 		menu.add(0,3,0,"Sound");
 		menu.add(0,4,0,"Vibrate");
-		//menu.add(0,5,0,"ScoreView");
 		return super.onCreateOptionsMenu(menu);
 		
 	}
@@ -119,7 +107,6 @@ public class BiniGameActivity extends Activity {
 		switch(item.getItemId())
 		{
 		case 1:
-			//mCrackbview.crackAll();
 			loadGame();
 			return true;
 		case 3:
@@ -137,13 +124,6 @@ public class BiniGameActivity extends Activity {
 	}
 	public void showScoreDialog()
 	{
-//		LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-//		final LinearLayout sv = (LinearLayout)findViewById(R.id.surface);
-//		final LinearLayout view = (LinearLayout)inflater.inflate(R.layout.message, null);
-//		sv.removeAllViews();
-		//sv.addView(view);
-//		sv.addView(view);
-		
 		new Handler().postDelayed(new Runnable() {
 			
 			@Override
@@ -157,7 +137,6 @@ public class BiniGameActivity extends Activity {
 				intent.putExtra("GAME_RESULT", result);
 				
 				startActivityForResult(intent,SCORE_BOARD);
-//				sv.removeView(view);
 			}
 		},1000);
 
@@ -172,16 +151,6 @@ public class BiniGameActivity extends Activity {
 		Log.d("TAG", sb.toString());
 		AlertDialog.Builder Builder =  new AlertDialog.Builder(this);
 		Builder.setTitle("Select ")
-		
-//		 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-//	           public void onClick(DialogInterface dialog, int id) {
-//	        //	   saveGame(true);
-//	        	   finish();
-//	        	   dialog.cancel();
-//	           }
-//
-//			
-//	       })
 			    .setItems(R.array.select_x_y_count, new DialogInterface.OnClickListener() {
 			
 				@Override
@@ -217,9 +186,6 @@ public class BiniGameActivity extends Activity {
 	protected void onDestroy() {
 		// TODO Auto-generated method stub
 		mCrackbview.close();
-//		adView.stopLoading();
-//		adView.destroy();
-//		adView = null;
 		super.onDestroy();   
 
 	}
@@ -244,20 +210,10 @@ public class BiniGameActivity extends Activity {
 	       .setCancelable(false)
 	       .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 	           public void onClick(DialogInterface dialog, int id) {
-	        //	   saveGame(true);
 	        	   finish();
 	        	   dialog.cancel();
 	           }
 	       })
-//           .setNeutralButton("No", new DialogInterface.OnClickListener() {
-//		    public void onClick(DialogInterface dialog, int whichButton) {
-//		
-//		        /* User clicked Something so do some stuff */
-//	        //(false);
-//	        	   finish();
-//	        	   dialog.cancel();
-//		    }
-//           })
 	       .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
 	           public void onClick(DialogInterface dialog, int id) {
 	               dialog.cancel();
@@ -350,45 +306,6 @@ public class BiniGameActivity extends Activity {
 	{
 		
 		loadAd();
-//		boolean flag = false;
-//		String buffer = "";
-//		try {
-//			FileInputStream fis = openFileInput("config.ini");
-//			InputStreamReader isr = new InputStreamReader(fis);
-////			OutputStreamWriter osw = new IputStreamWriter(os1);
-//			BufferedReader br = new BufferedReader(isr);
-//
-//			buffer = br.readLine();
-//			
-//			flag = Boolean.valueOf(buffer);
-//			
-//		} catch (FileNotFoundException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		if (flag)
-//		{
-//			try {
-//				File file = getFileStreamPath("main.save");
-//				FileInputStream fis = new FileInputStream(file);
-//				ObjectInputStream ois = new ObjectInputStream(fis);
-//				SaveOBJ load = (SaveOBJ) ois.readObject();
-//				mCrackbview.loadGame(load);
-//				return true;
-//			} catch (IOException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//		       
-//			} catch (ClassNotFoundException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//		      
-//			}
-//			
-//		}
 		 mCrackbview.loadGame();
 		return false;
 	}

@@ -22,12 +22,6 @@ class Stone_O  implements Serializable
 	{
 		Random r = new Random();
 		Shape = 1 + r.nextInt(GameConfig.Colors);
-//		if (Shape == 1)
-//		{
-//			if (r.nextBoolean())
-//				Shape = 1 + r.nextInt(GameConfig.Colors);
-//		}
-			
 
 	}
 	public Stone_O(int tag)
@@ -135,17 +129,9 @@ class Stone extends Stone_O
 	}
 	public void setPastPoint(int i, int x) {
 		// TODO Auto-generated method stub
-//		if (down == true)
-//		{
-//
-//		}
-//		else
-		{
-			
-			pasty ++;
-			down = true;
+		pasty ++;
+		down = true;
 
-		}
 	}
 	public void getPoint(Point tpt) {
 		// TODO Auto-generated method stub

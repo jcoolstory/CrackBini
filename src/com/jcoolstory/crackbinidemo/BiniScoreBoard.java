@@ -195,19 +195,6 @@ public class BiniScoreBoard  extends Activity{
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-//			if (mPrivate)
-//			{
-//				mPrivate = !mPrivate;
-//				requestW();
-//				init();
-//			}
-//			else
-//			{
-//				
-//				loadList();
-//				init();
-//
-//			}
 			mPrivate = !mPrivate;
 			dHandler hander = new dHandler();
 			hander.sendEmptyMessage(1);
@@ -225,7 +212,6 @@ public class BiniScoreBoard  extends Activity{
 			hander.sendEmptyMessage(1);
 
 			hander.sendEmptyMessageDelayed(3, 1000);
-//			upload();
 		}
 	};
 	protected int requestW() {
@@ -339,7 +325,6 @@ class BiniAdapter extends BaseAdapter
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
 		  
-		//LinearLayout instanview = null;
 		if (position == 0)
 		{
 			convertView = inflater.inflate(R.layout.scoretopinstace, parent, false);

@@ -71,10 +71,8 @@ class Animate extends BitmapDrawable
 	@Override
 	public void draw(Canvas canvas) {
 		// TODO Auto-generated method stub
-	//	super.draw(canvas);
 	
 		paint.setAlpha(alpha); 
-//		
 		canvas.drawBitmap(getBitmap(), null, str,paint);
 		
 	}
@@ -94,7 +92,6 @@ class Animate extends BitmapDrawable
 			matrix.setScale(p, p,dst.centerX(),dst.centerY());
 			matrix.mapRect(str);
 			alpha = (int) (255 * p);
-		//	Log.d("TAG", "p :" + p + "alpha " + alpha);
 		}
 		return true;
 		
@@ -126,10 +123,7 @@ public class CrackBView extends SurfaceView implements SurfaceHolder.Callback ,R
 
 	private long FRAME = 1000/24;
 	 
-	//private ArrayList<Integer> mScoreset = new ArrayList<Integer>();
 	public int mGameFlag = 0;
-//	private String text[];
-//	private boolean err = false;
 	int vgap =60;
 	int hgap = 4;
 	private ButtonX exitButton;
@@ -144,10 +138,6 @@ public class CrackBView extends SurfaceView implements SurfaceHolder.Callback ,R
 	private long mGameStartTime = 0;
 	
 	private Animate mLayer;
-	
-	//private Paint mSelectPaint;
-
-	
 	//////////////////
 	/// graphic
 	
@@ -415,8 +405,6 @@ public class CrackBView extends SurfaceView implements SurfaceHolder.Callback ,R
 									button.setDisable();
 									break;
 								case 1:
-//									RotateStart();
-//									mStoneTalbe.shiftLeft();
 									insert();
 									soundplay(mSound_add);
 									vibplay(1);
@@ -444,17 +432,6 @@ public class CrackBView extends SurfaceView implements SurfaceHolder.Callback ,R
 					
 					ShowErr("Error Restart? ");
 				}
-//				{
-//					boolean end = true;
-//					for (int s : mScoreset)
-//					{
-//						if (s <= 0)
-//							end = false;
-//						Log.d("TAG", "s : " + s);
-//					}
-//					if (end)
-//						Toast.makeText(getContext(), "Button0", Toast.LENGTH_SHORT).show();
-//				}
 				
 				if (mStoneTalbe.isEnd() <= 0) {
 					boolean end = true;
@@ -462,12 +439,6 @@ public class CrackBView extends SurfaceView implements SurfaceHolder.Callback ,R
 						end = false;
 					if (mScoreset[1] <= 0)
 						end = false;
-				//	if (mScoreset[])
-					//for (int s : mScoreset)
-					//{
-						//if (s <= 0)
-						
-					//}
 					
 					if (end)
 						showScoreDialog();
@@ -491,10 +462,7 @@ public class CrackBView extends SurfaceView implements SurfaceHolder.Callback ,R
 			c = getHolder().lockCanvas();
 			if (c != null)
 			{
-//				c.save();
-//				c.rotate(mEndRotate, mWidth/2 , mHeight/2);
 				Draw(c);
-//				c.restore();
 			}
 		}
 		
@@ -545,7 +513,6 @@ public class CrackBView extends SurfaceView implements SurfaceHolder.Callback ,R
 			}
 			if (mLoading == true)
 			{
-				//c.rotate(180,mWidth,getHeight());
 				c.drawBitmap(mLoadBitmap, null, rectA,mPaint);
 				c.drawBitmap(mLoadBitmap, null, rectB, mPaint);
 			}
@@ -558,9 +525,7 @@ public class CrackBView extends SurfaceView implements SurfaceHolder.Callback ,R
 		}	
 		mPaint.setTextAlign(Align.CENTER);
 		mPaint.setColor(Color.BLACK);
-		//c.drawText("delay : " + delaytime, 180, 52, mPaint);
-		//c.drawText("fps : " + String.format("%2.2f", framerate), 250, 42, mPaint);
-
+	
 	}
 	protected void DrawFrame(Canvas canvas) {
 		// TODO Auto-generated method stub
@@ -633,7 +598,6 @@ public class CrackBView extends SurfaceView implements SurfaceHolder.Callback ,R
 		
 		c.save();
 		
-		//mUIBottom 
 		c.translate(0, mHeight + vgap);
 		c.clipRect(mUIBottom);
 		c.drawPaint(mShaderPaint2);
@@ -650,16 +614,6 @@ public class CrackBView extends SurfaceView implements SurfaceHolder.Callback ,R
 		pastscore = score;
 		int dir = mStoneTalbe.getDirection();
 		
-		
-//		if ( dir > 0)
-//		{
-//			c.drawBitmap(mBM_right,null, mTopArrowRect, mPaint);	
-//		}
-//		else
-//		{
-//			c.drawBitmap(mBM_left,null, mTopArrowRect, mPaint);
-//		}
-		
 		c.save();
 		for(ButtonX button :mInterface  )
 		{
@@ -667,10 +621,7 @@ public class CrackBView extends SurfaceView implements SurfaceHolder.Callback ,R
 		}
 		exitButton.draw(c);
 		Rect bounds = new Rect();
-	//	String text = String.format("Depth %4d m   Dis %4d m", sDepth , mStoneTalbe.getmDist());
-	//	mForePaint.setColor(0xFF88FF88);
-	//	mForePaint.getTextBounds(text, 0, text.length(), bounds );
-	      
+      
 		mForePaint.setColor(Color.BLACK);
 		mForePaint.setTextAlign(Align.CENTER);
 		mPaint.setColor(Color.LTGRAY);
@@ -680,10 +631,6 @@ public class CrackBView extends SurfaceView implements SurfaceHolder.Callback ,R
 		mt.setScale(1.1f, 1.2f,recf.centerX(),recf.centerY());
 		mt.mapRect(recf);
 		recf.offsetTo(mTopArrowRect.left - recf.width() - hgap,hgap);
-		
-//		c.drawRect(bounds, mPaint);
-	//	c.drawBitmap(mUIBlock,null, recf, mPaint);
-	//	c.drawText(text, recf.centerX()  , recf.bottom-hgap,mForePaint);
 		c.restore();
 		
 	}
@@ -691,15 +638,10 @@ public class CrackBView extends SurfaceView implements SurfaceHolder.Callback ,R
 	{
 		mLoadStart  = true;
 		mLoadBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.block_1);
-//		mLoadBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.round_ui);
 		mLoadBitmap = Bitmap.createScaledBitmap(mLoadBitmap, getWidth()	, getHeight() /2 , true);
 
 		
 		post(new Runnable() {
-
-			
-
-
 
 			@Override
 			public void run() {
@@ -729,7 +671,6 @@ public class CrackBView extends SurfaceView implements SurfaceHolder.Callback ,R
 				mFillPaint =   new Paint();
 				
 				mForePaint =   new Paint(Paint.ANTI_ALIAS_FLAG);
-				//mForePaint.setFakeBoldText(true);
 				
 				mBorderPaint.setStyle(Paint.Style.STROKE);
 				mBorderPaint.setStrokeWidth(1);
@@ -811,7 +752,6 @@ public class CrackBView extends SurfaceView implements SurfaceHolder.Callback ,R
 						Xfermode xp =  new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP);
 						mFillPaint.setXfermode(xp);
 						canvas.drawRect(rt, mFillPaint);
-						//canvas.drawRect(rt, mBorderPaint);
 						
 						mFillPaint.setXfermode(null);
 						mStonBitmapArray.add(bitmap);
@@ -833,7 +773,6 @@ public class CrackBView extends SurfaceView implements SurfaceHolder.Callback ,R
 					Bitmap mainBitmap7 = BitmapFactory.decodeResource(getResources(), R.drawable.y_block_03);
 					Bitmap mainBitmap8 = BitmapFactory.decodeResource(getResources(), R.drawable.y_block_02);
 					Bitmap mainbitmap3 = BitmapFactory.decodeResource(getResources(), R.drawable.y_h_block_04);
-	//				
 					mainbitmap1 = Bitmap.createScaledBitmap(mainbitmap1,mStoneW, mStoneH,false );
 					mainbitmap2 = Bitmap.createScaledBitmap(mainbitmap2,mStoneW, mStoneH,false );
 					mainbitmap9 = Bitmap.createScaledBitmap(mainbitmap9,mStoneW, mStoneH,false );
@@ -1208,8 +1147,6 @@ public class CrackBView extends SurfaceView implements SurfaceHolder.Callback ,R
 	}
 	public void setXY(int x, int y) {
 		// TODO Auto-generated method stub
-		//maxX = 8;
-		//maxY =8;
 	}
 	public void getResult(GameResult result) {
 		// TODO Auto-generated method stub
@@ -1235,7 +1172,6 @@ public class CrackBView extends SurfaceView implements SurfaceHolder.Callback ,R
 		while (mRunning)
 		{
 			long temp = System.currentTimeMillis();
-//			update(FRAME);
 			synchronized (mStoneTalbe) {
 				if (mGameFlag != 0)
 				{

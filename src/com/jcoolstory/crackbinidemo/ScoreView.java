@@ -52,15 +52,10 @@ public class ScoreView extends Activity implements OnClickListener{
 		
 		
 		Log.d("TAG", "Tostring " + date.toString());
-		//Time time = new Time();
-		//time.set(result.Durringtime);
-		//time.format3339(false);
-//		String time = sdf.format(date);
 		long total = result.Score + result.Depth * 200 + result.Distance * 50;
 		tvtotalscore.setText(String.valueOf(total));
 		
 		findViewById(R.id.sv_restart).setOnClickListener(this);
-		//findViewById(R.id.sv_close).setOnClickListener(this);
 		findViewById(R.id.sv_exit).setOnClickListener(this);
 		TextView title = (TextView)findViewById(R.id.ScoreView_Title);
 		title.setText(" Game Over " );

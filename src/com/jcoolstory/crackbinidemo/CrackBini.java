@@ -56,7 +56,6 @@ public class CrackBini extends Activity  implements OnClickListener {
 	public static final int START_YES_NO = 1;
 	private AdView adView;
     private static final String MY_AD_UNIT_ID_ADAM = "168eZ1YT133d3a113a3";
- //   private MobileAdView moadview;
 	private static final String MY_AD_UNIT_ID = "a14ecd4c3080016";
 	public static final String SHARED_PREFS_NAME = "com.jcoolstory.crackbini";
 	private Context  mContext;
@@ -79,24 +78,15 @@ public class CrackBini extends Activity  implements OnClickListener {
 				}
 				else
 				{
-//					loadGame();
-		//	        loadGame();
 					loadPref(mContext);
 				}
 				setContentView(R.layout.bini_main);
 				init();
-////				LinearLayout sv = (LinearLayout)findViewById(R.id.surface);
-////				sv.addView(mCrackbview);
-////				setContentView(mCrackbview);
 				FrameLayout fl = (FrameLayout) findViewById(R.id.framefade);
 				Animation animation = AnimationUtils.loadAnimation(CrackBini.this, R.anim.fadealpha);
-////				fl.setAnimation(animation );
+
 				fl.startAnimation(animation);
-				
 				 
-//////		     adView = (AdView)this.findViewById(R.id.adView);
-//////		     // Lookup your LinearLayout assuming it¡¯s been given    
-//////		     // the attribute android:id="@+id/mainLayout"
 				RelativeLayout layout = (RelativeLayout)findViewById(R.id.mainbanner);
 				adView = new AdView(CrackBini.this, AdSize.BANNER, MY_AD_UNIT_ID);
 				adView.setAdListener(admobListener);
@@ -105,14 +95,6 @@ public class CrackBini extends Activity  implements OnClickListener {
 				
 				AdRequest ar = new AdRequest();		     
 				adView.loadAd(ar);
-
-//
-//		     AdConfig.setClientId(MY_AD_UNIT_ID_ADAM);
-//		     
-//		     moadview = new MobileAdView(CrackBini.this);
-//		     moadview.setAdListener(adlist);
-//		     moadview.setVisibility(View.VISIBLE);
-//		     layout.addView(moadview);
 		     
 			}
 		}, 1000);
@@ -133,7 +115,6 @@ public class CrackBini extends Activity  implements OnClickListener {
 		@Override
 		public void onReceiveAd(Ad arg0) {
 			// TODO Auto-generated method stub
-			//adView.setVisibility(View.VISIBLE);
 		}
 		@Override
 		public void onPresentScreen(Ad arg0) {
@@ -159,36 +140,6 @@ public class CrackBini extends Activity  implements OnClickListener {
 			
 		}
 	};
-//    AdHttpListener adlist = new AdHttpListener() {
-//		
-//		@Override
-//		public void failedDownloadAd_AdListener(int arg0, String arg1) {
-//			// TODO Auto-generated method stub
-//			moadview.setVisibility(View.GONE);
-//			
-//			FrameLayout layout = (FrameLayout)findViewById(R.id.mainbanner);
-////			layout.removeView(moadview);
-//			if (adView == null)
-//			{
-//				adView = new AdView(CrackBini.this, AdSize.BANNER, MY_AD_UNIT_ID);
-//				adView.setAdListener(admobListener);
-//				
-//				layout.addView(adView);
-//			}
-//			AdRequest ar = new AdRequest();		     
-//			adView.loadAd(ar);
-//			Log.d("CrackBini", "AD@am faildAD"+ arg0 + arg1);
-//		}
-//		
-//		@Override
-//		public void didDownloadAd_AdListener() {
-//			// TODO Auto-generated method stub
-//			if (adView != null)
-//			{
-//				adView.stopLoading();
-//			}
-//		}
-//	};
     public void init()
     {
 		findViewById(R.id.BT_Start).setOnClickListener(CrackBini.this);
@@ -198,92 +149,14 @@ public class CrackBini extends Activity  implements OnClickListener {
     }
 	public boolean firstStart()
 	{
-//		try
-//		{
-			SharedPreferences pref = mContext.getSharedPreferences(BiniPreference.PREF, Activity.MODE_PRIVATE);
-			boolean result = pref.getBoolean("first", true);
-			SharedPreferences.Editor editor = pref.edit();
-			editor.putBoolean("first", false);
-			editor.commit();
-			Log.d("TAG", "first" + result);
-			
-//			File file = getFileStreamPath("config.ini");
-//			if (!file.isFile())
-//			{
-//				file.createNewFile();
-//				return true;
-//			}
-//			else
-//			{
-//				FileInputStream fis = new FileInputStream(file);
-//				return false;
-//			}
-
-//		}
-//		catch(IOException e)
-//		{
-//			
-//		}
-//		try
-//		{
-//			File bini = getFileStreamPath("Score.bini");
-//			if (!bini.isFile())
-//			{
-//				bini.createNewFile();
-//			
-//			}
-//		}
-//		catch(Exception e)
-//		{
-//			
-//		}
+		SharedPreferences pref = mContext.getSharedPreferences(BiniPreference.PREF, Activity.MODE_PRIVATE);
+		boolean result = pref.getBoolean("first", true);
+		SharedPreferences.Editor editor = pref.edit();
+		editor.putBoolean("first", false);
+		editor.commit();
+		Log.d("TAG", "first" + result);
 		return result;
 	}
-//	public boolean loadGame()
-//	{
-//		boolean flag = false;
-//		String buffer = "";
-//		try {
-//			FileInputStream fis = openFileInput("config.ini");
-//			InputStreamReader isr = new InputStreamReader(fis);
-////			OutputStreamWriter osw = new IputStreamWriter(os1);
-//			BufferedReader br = new BufferedReader(isr);
-//
-//			buffer = br.readLine();
-//			
-//			flag = Boolean.valueOf(buffer);
-//			
-//		} catch (FileNotFoundException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		if (flag)
-//		{
-//			try {
-//				File file = getFileStreamPath("main.save");
-//				FileInputStream fis = new FileInputStream(file);
-//				ObjectInputStream ois = new ObjectInputStream(fis);
-//				SaveOBJ load = (SaveOBJ) ois.readObject();
-//				mCrackbview.loadGame(load);
-//				return true;
-//			} catch (IOException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//		       
-//			} catch (ClassNotFoundException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//		      
-//			}
-//			
-//		}
-//		 mCrackbview.loadGame();
-//		return false;
-//	}
-
 	@Override
 	public void onClick(View view) {
 		// TODO Auto-generated method stub
@@ -296,10 +169,10 @@ public class CrackBini extends Activity  implements OnClickListener {
 		case R.id.BT_SCORE:
 			intent = new Intent(this,BiniScoreBoard.class);
 			startActivity(intent);
-//			Toast.makeText(this, "ÁØºñÁß", Toast.LENGTH_SHORT).show();
+//			Toast.makeText(this, "ï¿½Øºï¿½ï¿½ï¿½", Toast.LENGTH_SHORT).show();
 			break;
 		case R.id.BT_OP:
-//			Toast.makeText(this, "ÁØºñÁß", Toast.LENGTH_SHORT).show();
+//			Toast.makeText(this, "ï¿½Øºï¿½ï¿½ï¿½", Toast.LENGTH_SHORT).show();
 			intent = new Intent(this,BiniPreference.class);
 			startActivity(intent);
 			break;
@@ -394,7 +267,6 @@ public class CrackBini extends Activity  implements OnClickListener {
 	           public void onClick(DialogInterface dialog, int id) {
 	        	   SharedPreferences pref = mContext.getSharedPreferences(BiniPreference.PREF, Activity.MODE_PRIVATE);
 	       			SharedPreferences.Editor editor = pref.edit();
-//	       			EditText text = (EditText) dialog.findViewById(R.id.username_edit);
 	       			Editable name = edit.getText();
 	       			
 	       			editor.putString("username",name.toString().trim() );

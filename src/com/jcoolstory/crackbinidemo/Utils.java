@@ -14,22 +14,12 @@ public class Utils {
 	       .setCancelable(false)
 	       .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 	           public void onClick(DialogInterface dialog, int id) {
-	        //	   saveGame(true);
 	        	   act.finish();
 	        	   dialog.cancel();
 	           }
 
 			
 	       })
-//           .setNeutralButton("No", new DialogInterface.OnClickListener() {
-//		    public void onClick(DialogInterface dialog, int whichButton) {
-//		
-//		        /* User clicked Something so do some stuff */
-//	        //(false);
-//	        	   finish();
-//	        	   dialog.cancel();
-//		    }
-//           })
 	       .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
 	           public void onClick(DialogInterface dialog, int id) {
 	               dialog.cancel();

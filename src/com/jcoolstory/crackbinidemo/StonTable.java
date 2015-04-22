@@ -88,7 +88,6 @@ class BiniTable extends StoneTable
 class StoneTable
 {
 	protected Stone[][] Table = null;
-//	private Stone[][] historyTable = null;
 	private boolean mHistory = false;
 	protected int ilength ;
 	private int iheight;
@@ -182,24 +181,6 @@ class StoneTable
 				}
 			}
 		}
-//		for (int i = 0 ; i < Table.length ; i++)
-//		{
-//			for (int j = 0 ; j < Table[i].length ; j++)
-//			{
-//				if (tempindex[i][j] > 1)
-//				{
-//					Table[i][j].posible =true;
-//				}
-//					else
-//					{
-//						Table[i][j].posible =false;
-//
-//						
-//				}
-//				tempindex[i][j] = 0;
-//			}
-//		}
-//		if (d >0)
 
 		return Count ;
 	}
@@ -356,7 +337,6 @@ class StoneTable
 		mDist += addcount;
 		if (addcount >0)
 			direction *= -1;
-	//	direction = 1;
 	}
 	public void changeDirection()
 	{
@@ -550,7 +530,6 @@ class StoneTable
 				}
 			}	
 		}
-		//changeDirection();
 	}
 	private int Score;
 	/**
