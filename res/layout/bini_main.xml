@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/logomain"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bini_main_yellow_07"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/framefade"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/bini_main_yellow_05"
+        android:visibility="invisible" >
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/BT_SCORE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/round_ui"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/ScoreBoard"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/BT_Start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/BT_SCORE"
+        android:layout_alignLeft="@+id/BT_SCORE"
+        android:layout_alignRight="@+id/BT_SCORE"
+        android:layout_marginBottom="21dp"
+        android:background="@drawable/round_ui"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/start"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/BT_OP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/BT_SCORE"
+        android:layout_alignRight="@+id/BT_SCORE"
+        android:layout_below="@+id/BT_SCORE"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/round_ui"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/option"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/BT_EXIT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/BT_OP"
+        android:layout_alignRight="@+id/BT_OP"
+        android:layout_below="@+id/BT_OP"
+        android:layout_marginTop="23dp"
+        android:background="@drawable/round_ui"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="@string/Exit"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/LinearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:gravity="center|center_horizontal"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/mainbanner"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:background="#ffffffff" >
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

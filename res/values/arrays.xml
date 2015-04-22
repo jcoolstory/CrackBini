@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string-array name="select_x_y_count">
+        <item>"10 X 10"</item>
+        <item>"11 X 11"</item>
+        <item>"12 X 12"</item>
+        <item>"13 X 13"</item>
+    </string-array>
+<integer-array name="select_x_y_int"> 
+        <item>5</item>
+        <item>6</item>
+        <item>12</item>
+        <item>13</item></integer-array>
+        <string-array name="theme_name">
+            <item>Cartoone</item>
+            <item>R-Block</item>
+        </string-array>
+        <integer-array  name="theme_index">
+            <item>1</item>
+            <item>2</item>
+        </integer-array>
+        
+</resources>

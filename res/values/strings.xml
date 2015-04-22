@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, CrackBini!</string>
+    <string name="app_name">CrackBini</string>
+	<string name="end">Game Over</string>
+	<string name="go">Go</string>
+	<string name="start">Start</string>
+	<string name="option">Option</string>
+	<string name="Exit">Exit</string>
+	<string name="ScoreBoard">ScoreBoard</string>
+	<string name="Score">Score</string>
+	<string name="Depth">Depth</string>
+	<string name="Distance">Distance</string>
+	<string name="Total_Socre">Total Score</string>
+	<string name="restart">Restart</string>
+	<string name="close">Close</string>
+	<string name="sound">Sound</string>
+	<string name="vibrate">Vibrater</string>
+	<string name="user_name">User Name</string>
+	<string name="accept">Accept</string>
+	<string name="row_col">X  Y</string>
+	<string name="cancel">Cancel</string>
+	<string name="rank">Rank</string>
+	<string name="recordtime">Rec</string>
+	<string name="date">Date</string>
+	<string name="worldrecord">World</string>
+	<string name="privaterecord">Private Record</string>
+	<string name="upload">Upload</string>
+	<string name="theme">Theme</string>
+	<string name="gameover">Game Over</string>
+	<string name="bannermessage">AD</string>
+	
+</resources>

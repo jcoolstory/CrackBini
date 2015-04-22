@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sv_main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bini_main_yellow_08"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_margin="10dp"
+        android:focusable="false" >
+
+        <ListView
+            android:id="@+id/sv_listView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/LinearLayout1"
+            android:layout_below="@+id/sv_title"
+            android:focusableInTouchMode="false" >
+        </ListView>
+
+        <LinearLayout
+            android:id="@+id/LinearLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/sv_upload"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/round_ui"
+                android:padding="10dp"
+                android:textSize="18sp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="@string/upload" />
+
+            <Button
+                android:id="@+id/sv_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/round_ui"
+                android:padding="10dp"
+                android:textSize="18sp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="@string/worldrecord" />
+
+            <Button
+                android:id="@+id/sv_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/round_ui"
+                android:textSize="18sp"
+                android:padding="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="@string/close" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/sv_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="30dp"
+            android:gravity="center"
+            android:shadowColor="#FFFFFF"
+            android:shadowDx="5"
+            android:shadowDy="5"
+            android:shadowRadius="5"
+            android:soundEffectsEnabled="true"
+            android:text="@string/privaterecord"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+    </RelativeLayout>
+
+</RelativeLayout>
